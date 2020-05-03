@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "onlinewalletapp"
+    }
+  },
+  "defaultProject": "onlinewalletapp",
+  "cli": {
+    "analytics": "80d6cca0-dd5e-47f4-8fcf-edd8343a2f78"
+  }
 }
