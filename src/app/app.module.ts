@@ -10,6 +10,8 @@ import { TransferAmountComponent } from './transfer-amount/transfer-amount.compo
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { CustomerServiceService } from './customer-service.service';
+import { LoginComponent } from './login/login.component';
+import { ViewPageComponent } from './view-page/view-page.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { CustomerServiceService } from './customer-service.service';
     CreateAccountComponent,
     AddAmountComponent,
     DisplayBalanceComponent,
-    TransferAmountComponent
+    TransferAmountComponent,
+    LoginComponent,
+    ViewPageComponent
   ],
   imports: [
     BrowserModule,

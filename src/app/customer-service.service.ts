@@ -7,28 +7,34 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 export class CustomerServiceService {
 
   constructor(private http:HttpClient) { }
-  walletuser:WalletUser
-walletaccount:WalletAccount
+  //walletuser:WalletUser
+//walletaccount:WalletAccount
 private headers = new HttpHeaders({'Content-Type': 'application/json'});
+
 
     public createAccount(user: WalletAccount) {
       console.log(user);
-      return this.http.post<WalletAccount>("http://localhost:2020/Employee/createAccount", user,{headers: this.headers});
+      return this.http.post<WalletAccount>("http://localhost:2020/Wallet/createAccount", user,{headers: this.headers});
    }
 
    public addAmount(userid: number, accountbalance: number) {
     console.log(userid, accountbalance);
-    return this.http.put<WalletAccount>("http://localhost:2021/Wallet/addAmount/"+ userid+"/"+ accountbalance,{responseType:'text'});
+    return this.http.put<WalletAccount>("http://localhost:2021/Wallet/addAmount/"+ userid+"/"+ accountbalance,{headers: this.headers});
  }
 
 
    public displayBalance(userid: number) {
     console.log(userid);
-    return this.http.get<WalletAccount>("http://localhost:2022/Wallet/displayBalance"+userid,{responseType: 'json'});
+    return this.http.get<WalletAccount>("http://localhost:2022/Wallet/displayBalance/"+ userid, {responseType:'json'});
   }
-  public transferAmount(userid1: number, userid2: number, amount: number) {
-    console.log(userid1, userid2, amount);
-    return this.http.put<WalletAccount>("http://localhost:2023/Wallet/transferAmount/"+userid1+"/"+userid2+"/"+amount,{responseType:'text'});
+  public transferAmount( amount: number,userid1: number, userid2: number) {
+    console.log(amount, userid1, userid2,);
+    return this.http.put<WalletAccount>("http://localhost:2023/Wallet/transferAmount/"+amount+"/"+userid1+"/"+userid2,{headers: this.headers});
+  }
+
+  public validateUser(userid: number, password: string) {
+    console.log(userid, password);
+    return this.http.get<WalletUser>("http://localhost:2024/Wallet/validateUser/"+ userid+"/"+ password,{headers: this.headers});
   }
 
 }
@@ -56,8 +62,8 @@ export class WalletAccount
   accountId:number;
     accountBalance: number;
   status:string;
-  WalletUser:WalletUser;
-WalletTransactions: WalletTransactions[];
+  WalletUser:WalletUser;//one to one
+WalletTransactions: WalletTransactions[];//one to many
   
 
 

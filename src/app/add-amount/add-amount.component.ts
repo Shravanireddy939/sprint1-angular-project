@@ -30,8 +30,11 @@ accountNo: number;
   addAmount():void{
     this.customerservice.addAmount(this.accountNo,this.accBal)
         .subscribe(response => {
-          this.result = response,
+          if(response!=null)
+         // this.result = response;
           alert("Amount Added Successfully");
+          else
+          alert("Not added");
         });
            this.router.navigate(['add-amount']);
 }

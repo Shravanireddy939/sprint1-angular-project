@@ -25,13 +25,17 @@ export class TransferAmountComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  transferamount() {
-    this.customerservice.transferAmount(this.acc_id,this.acc_id2,this.amount)
+  transferamount() :void{
+    this.customerservice.transferAmount(this.amount,this.acc_id,this.acc_id2)
     .subscribe(response =>{
-      this.result = response;
+      if(response!=null)
+      // this.result = response;
+       alert("Amount Transfered Successfully");
+       else
+       alert("Not transfered");
     });
 
-    this.router.navigate(['tranfer-amount']);
+    this.router.navigate(['transfer-amount']);
   }
 
 }

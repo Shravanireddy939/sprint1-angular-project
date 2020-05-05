@@ -4,25 +4,25 @@
   <div>
     
       <form #customerForm="ngForm">
-          <div class="form-group">
+         <!-- <div class="form-group">
   <label><b>Enter UserId:</b> </label>
-  <input required type="text" id="userId" required [(ngModel)]="walletaccount.WalletUser.userId" name="userId" class="form-control">
-</div>
+  <input required type="text" id="userId" required [(ngModel)]="WalletUser.userId" name="userId" class="form-control">
+</div>-->
 <div class="form-group">
   <label><b>Enter UserName :</b></label>
-  <input type="text"   id="userName" required [(ngModel)]="walletaccount.WalletUser.userName" name="userName"  class="form-control">
+  <input type="text"   id="userName" required [(ngModel)]="walletuser.userName" name="userName"  class="form-control">
 </div>
 <div class="form-group">
   <label><b>Enter Password:</b></label>
-  <input type="text"   id="password" required [(ngModel)]="walletaccount.WalletUser.password" pattern="^[A-Za-z0-9]+$" maxlength="10" name="password"  class="form-control">
+  <input type="text"   id="password" required [(ngModel)]="walletuser.password" pattern="^[A-Za-z0-9]+$" maxlength="10" name="password"  class="form-control">
 </div>
 <div class="form-group">
   <label><b>Enter PhoneNumber :</b> </label>
-  <input type="text"   id="phoneNumber" required [(ngModel)]="walletaccount.WalletUser.phoneNumber" pattern=[0-9]* maxlength="10" #uname="ngModel" name="phoneNumber"  class="form-control">
+  <input type="text"   id="phoneNumber" required [(ngModel)]="walletuser.phoneNumber" pattern=[0-9]* maxlength="10" #uname="ngModel" name="phoneNumber"  class="form-control">
 </div>
 <div class="form-group">
   <label> <b> Enter LoginName : </b></label>
-  <input type="text"   id="loginName" required [(ngModel)]="walletaccount.WalletUser.loginName" name="loginName"  class="form-control">
+  <input type="text"   id="loginName" required [(ngModel)]="walletuser.loginName" name="loginName"  class="form-control">
 </div>
 
 <button type="submit" class="btn btn-success" (click)="createAccount()">Submit</button>
