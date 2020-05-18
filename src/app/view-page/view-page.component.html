@@ -1,41 +1,37 @@
-<head>
-  <title>Welcome to</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">  
-    </head>
+<head >
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">  
+</head>
   
       <div  class="container-fluid">  
-      <h3>Welcome</h3>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">  
-            <ul class="navbar-nav">  
-          <li class="nav-item ">  
-            <a href="create-account"  class="roterlink navbar-brand">Create Account</a>
-          </li> 
-          <li class="nav-item ">  
-            <a href="add-amount"  class="roterlink navbar-brand">Add Amount</a>
-          </li> 
-          <li class="nav-item ">  
-            <a href="display-balance"  class="roterlink navbar-brand">Display Balance</a>
-          </li> 
-          <li class="nav-item ">  
-            <a href="transfer-amount"  class="roterlink navbar-brand">Transfer Amount</a>
-          </li> 
-      <!--    <a routerLink="create-account" class="nav-link" class="btn btn-primary active" role="button" >Create Account</a>  
-          <div class="navbar navbar-dark bg-dark a">
-            <a href="create-account"  class="roterlink navbar-brand">create-accountt</a>
-            </div>  
-        </li> 
-          <li class="nav-item">
-            <a  routerLink="add-amount" class="nav-link" class="btn btn-primary active" role="button" >Add Amount</a>  
-          </li>  
-          <li class="nav-item">
-            <a  routerLink="display-balance" class="nav-link" class="btn btn-primary active" role="button" >Display Balance</a>  
-          </li>   
-          <li class="nav-item">
-            <a  routerLink="transfer-amount" class="nav-link" class="btn btn-primary active" role="button" >Transfer Amount</a>  
-          </li> -->           
-        </ul> 
-      </nav> 
+      <h3 align="center">Welcome</h3>
+  
+        
+          <nav class="navbar navbar-inverse navbar-fixed-top navbar-collapse" id="head-navbar">  
+      
+            <button type="button" class="btn  btn-info navbar-btn" (click)='AddAmount()'> 
+                          <span class="glyphicon glyphicon-shopping-cart">Add Amount</span> 
+             </button>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+    
+        
+          
+          <button type="button" class="btn  btn-info navbar-btn" (click)='DisplayBalance()'> 
+                          <span class="glyphicon glyphicon-shopping-cart">Display Balance</span> 
+             </button>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+          
+    
+            <button type="button" class="btn  btn-info navbar-btn" (click)='TransferAmount()'> 
+                          <span class="glyphicon glyphicon-shopping-cart">Transfer Amount</span> 
+             </button>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             
+            <button type="button" class="btn  btn-info navbar-btn" (click)='ShowTransactions()'> 
+              <span class="glyphicon glyphicon-shopping-cart">Show Transactions</span> 
+ </button>
+          
   
     
-        <router-outlet></router-outlet>  
-    </div>

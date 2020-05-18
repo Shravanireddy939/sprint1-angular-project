@@ -12,6 +12,7 @@ import {FormsModule} from '@angular/forms';
 import { CustomerServiceService } from './customer-service.service';
 import { LoginComponent } from './login/login.component';
 import { ViewPageComponent } from './view-page/view-page.component';
+import { ShowTransactionsComponent } from './show-transactions/show-transactions.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ViewPageComponent } from './view-page/view-page.component';
     DisplayBalanceComponent,
     TransferAmountComponent,
     LoginComponent,
-    ViewPageComponent
+    ViewPageComponent,
+    ShowTransactionsComponent
   ],
   imports: [
     BrowserModule,

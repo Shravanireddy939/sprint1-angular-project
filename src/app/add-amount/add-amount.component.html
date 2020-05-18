@@ -1,18 +1,16 @@
-<div class="container">
+
+    <div class="col-lg-4 m-auto d-block">
     <br><br>
     <h3 class="text-center"><u>Add Amount</u></h3>
     <div>
         <form #customerForm="ngForm">
-            <div class="form-group">
-          <label for="accountNo">Enter UserId:</label>
-    <input required type="text" id="accountNo" required [(ngModel)]="accountNo"  name="userId" class="form-control">
-</div>
+        
 <div class="form-group">
-    <label for="accBal">Enter AccountBalance:</label>
+    <label for="accBal">Enter Amount  to Add</label>
     <input type="text"   id="accBal" required [(ngModel)]="accBal" name="accountBalance"  class="form-control">
 </div>
 
-<button type="submit" class="btn btn-success" (click)="addAmount()">Submit</button>
+ <button type="submit" class="btn btn-success" (click)="addAmount()">Submit</button>
 </form>
 </div>
 </div>

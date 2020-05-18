@@ -6,15 +6,17 @@ import { DisplayBalanceComponent } from './display-balance/display-balance.compo
 import { TransferAmountComponent } from './transfer-amount/transfer-amount.component';
 import { LoginComponent } from './login/login.component';
 import { ViewPageComponent } from './view-page/view-page.component';
+import { ShowTransactionsComponent } from './show-transactions/show-transactions.component';
 
 
 const routes: Routes = [
   { path: 'create-account',component: CreateAccountComponent},
-  { path: 'add-amount', component: AddAmountComponent },
-   {path:'display-balance',component:DisplayBalanceComponent},
-   {path:'transfer-amount',component:TransferAmountComponent},
+  { path: 'add-amount/:userId', component: AddAmountComponent },
+   {path:'display-balance/:userId',component:DisplayBalanceComponent},
+   {path:'transfer-amount/:userId',component:TransferAmountComponent},
+   {path:'show-transactions/:userId',component:ShowTransactionsComponent},
    {path:'',component:LoginComponent},
-   {path:'view-page',component:ViewPageComponent},
+   {path:'view-page/:userId',component:ViewPageComponent},
 ];
 
 @NgModule({

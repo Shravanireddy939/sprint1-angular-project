@@ -10,27 +10,32 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
 
-  userid: number;
+  userId: number;
   password: string;
   details: any;
-  constructor(private customerservice: CustomerServiceService, private router: Router) { }
+  
+    constructor(private customerservice: CustomerServiceService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
     
 
-  onSubmit(user:WalletUser):void{
-    console.log(user.userId,user.password);
+
+onSubmit(user:WalletUser){
+  console.log(user.userId,user.password);
+    this.userId=user.userId;
     this.customerservice.validateUser(user.userId,user.password).subscribe(
     (data)=>{
       this.details =data
-      console.log("returened"+this.details)
-    if (this.details == null) {
-     alert("Invalid userid/password ");
+      console.log("returened "+this.details)
+    if (this.details == "Please Enter Valid Login Detailsh UserId/n if you don't have an account please register below") {
+           alert("Ooops..! Invalid username/password *try again or please register below");
      }
      else {
-       this.router.navigate(['view-page']);
+      alert("Login Successfull");
+       console.log(this.userId)
+       this.router.navigate(['view-page',this.userId]);
        } 
     }
     );

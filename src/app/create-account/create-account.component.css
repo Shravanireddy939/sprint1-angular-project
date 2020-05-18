@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url(https://www.pexels.com/photo/abstract-antique-backdrop-background-129731/);
+    background-size: cover;
+    background-position: center;
+    
+}
+.sign-up-form
+{
+width: 300px;
+box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+}
+.sign-up-form h1
+{
+    color: burlywood;
+    margin-bottom: 0em;
+}

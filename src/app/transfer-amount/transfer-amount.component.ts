@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomerServiceService, WalletAccount, WalletUser, WalletTransactions } from '../customer-service.service';
-import { Router } from '@angular/router';
+import { CustomerServiceService } from '../customer-service.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -10,8 +10,6 @@ import { Router } from '@angular/router';
 })
 export class TransferAmountComponent implements OnInit {
 
-  acc_id: number;
-
   acc_id2:number;
     
     amount:number;
@@ -20,22 +18,30 @@ export class TransferAmountComponent implements OnInit {
 
 
 
-  constructor(private customerservice: CustomerServiceService, private router: Router) { }
+  constructor(private customerservice: CustomerServiceService, private routing:ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   transferamount() :void{
-    this.customerservice.transferAmount(this.amount,this.acc_id,this.acc_id2)
-    .subscribe(response =>{
+    // retriving userdata from login page 
+let user=this.routing.snapshot.paramMap.get('userId');
+let userId=Number(user); /** snapshot returns string */
+    console.log(userId);
+if(this.amount==0||this.acc_id2==0||this.acc_id2==null||this.amount==null||userId==this.acc_id2){ 
+  alert("please enter all/valid details");
+}else{
+    this.customerservice.transferAmount(this.amount,userId,this.acc_id2)
+    .subscribe(response =>{  
+      console.log(response)  
+     
       if(response!=null)
-      // this.result = response;
-       alert("Amount Transfered Successfully");
-       else
-       alert("Not transfered");
+            this.result = response;    
+            alert("transfer successfull")  
     });
 
-    this.router.navigate(['transfer-amount']);
+    this.router.navigate(['transfer-amount',userId]);
   }
-
+ 
 }
+} 

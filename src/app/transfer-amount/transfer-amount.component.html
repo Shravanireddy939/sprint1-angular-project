@@ -1,22 +1,18 @@
-<div class="container">
-    <br><br>
-    <h3 class="text-center"><u>Tranfer Amount</u></h3>
-    <div>
-        <form #customerForm="ngForm">
-            <div class="form-group">
-                <label for="acc_id">Enter UserId1:</label>
-    <input required type="text" id="acc_id" required [(ngModel)]="acc_id"  name="acc_id" class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="acc_id2">Enter UserId2:</label>
-    <input type="text"   id="acc_id2" required [(ngModel)]="acc_id2" name="acc_id2"  class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="amount">Enter Amount to Transfer:</label>
-    <input type="text"   id="amount" required [(ngModel)]="amount" maxlength="10" name="amount"  class="form-control">
-  </div>
+<div class="col-lg-4 m-auto d-block">
+  <br><br>
+  <h3 class="text-center"><u>Transfer Amount</u></h3>
+  <div>
+      <form #customerForm="ngForm">
+      <div class="form-group">
+        <label for="acc_id2">Enter User Id</label>
+        <input type="number"   id="acc_id2" required [(ngModel)]="acc_id2" name="acc_id2"  class="form-control">
+  <label for="accBal">Enter Amount to transfer</label>
+  <input type="number"   id="amount" required [(ngModel)]="amount" name="amount"  class="form-control">
+</div>
 
-  <button type="submit" class="btn btn-success" (click)="transferamount()">Submit</button>
-  </form>
-  </div>
-  </div>
+<button type="submit" class="btn btn-success" (click)="transferamount()">Submit</button>
+</form>
+</div>
+</div>
+
+<!--<p align="center">{{ result }}</p>-->
