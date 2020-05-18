@@ -1,11 +1,6 @@
-#head-navbar {
-    width: 100%;
-    white-space: nowrap;
-    display: inline-block;
-    overflow: hidden;
-  }
-  .nav>li {
-    display: inline-block;
-    white-space: nowrap;
-  }
-
+.btn-margin-left {
+  margin-left: 20px;
+}
+.btn-margin-right {
+  margin-right: 20px;
+}
